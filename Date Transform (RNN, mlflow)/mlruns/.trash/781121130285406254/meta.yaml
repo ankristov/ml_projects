@@ -1,0 +1,8 @@
+artifact_location: /Users/andreikristov/Documents/repos/ml_projects/Date Transform
+  (RNN, mlflow)/mlruns/781121130285406254
+creation_time: 1730145535561
+experiment_id: '781121130285406254'
+last_update_time: 1730146544902
+lifecycle_stage: deleted
+name: exp__emoji__model_basic
+tags: {}

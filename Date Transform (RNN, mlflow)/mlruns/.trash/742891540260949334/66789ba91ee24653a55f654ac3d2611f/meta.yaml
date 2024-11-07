@@ -1,0 +1,17 @@
+artifact_uri: /Users/andreikristov/Documents/repos/ml_projects/Date Transform (RNN,
+  mlflow)/mlruns/742891540260949334/66789ba91ee24653a55f654ac3d2611f/artifacts
+deleted_time: 1730146528896
+end_time: 1730145064454
+entry_point_name: ''
+experiment_id: '742891540260949334'
+lifecycle_stage: deleted
+run_id: 66789ba91ee24653a55f654ac3d2611f
+run_name: run__3
+run_uuid: 66789ba91ee24653a55f654ac3d2611f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730145061894
+status: 3
+tags: []
+user_id: andreikristov

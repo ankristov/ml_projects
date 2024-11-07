@@ -1,0 +1,7 @@
+artifact_location: /Users/andreikristov/Documents/repos/ml_projects/Date Transform
+  (RNN, mlflow)/mlruns/576776421225571889
+creation_time: 1730104839733
+experiment_id: '576776421225571889'
+last_update_time: 1730104839733
+lifecycle_stage: active
+name: exp__rnn__date_traslate

@@ -1,0 +1,15 @@
+artifact_uri: /Users/andreikristov/Documents/repos/ml_projects/Emojify/mlruns/991352176457995912/72d338f2a38141bcbeb4c9aa7645ae09/artifacts
+end_time: 1730206981349
+entry_point_name: ''
+experiment_id: '991352176457995912'
+lifecycle_stage: active
+run_id: 72d338f2a38141bcbeb4c9aa7645ae09
+run_name: run__e200__r2
+run_uuid: 72d338f2a38141bcbeb4c9aa7645ae09
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1730206979184
+status: 3
+tags: []
+user_id: andreikristov

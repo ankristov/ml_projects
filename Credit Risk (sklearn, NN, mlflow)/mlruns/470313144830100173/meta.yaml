@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/470313144830100173
+creation_time: 1731089327992
+experiment_id: '470313144830100173'
+last_update_time: 1731089327992
+lifecycle_stage: active
+name: exp__KNeighbors_basic

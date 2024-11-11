@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/967718742808142236
+creation_time: 1731089422301
+experiment_id: '967718742808142236'
+last_update_time: 1731089422301
+lifecycle_stage: active
+name: exp__KNeighbors_tuned

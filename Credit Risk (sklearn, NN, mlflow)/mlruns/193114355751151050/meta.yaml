@@ -1,0 +1,6 @@
+artifact_location: mlflow-artifacts:/193114355751151050
+creation_time: 1731089144430
+experiment_id: '193114355751151050'
+last_update_time: 1731089144430
+lifecycle_stage: active
+name: exp__GradientBoosting_tuned

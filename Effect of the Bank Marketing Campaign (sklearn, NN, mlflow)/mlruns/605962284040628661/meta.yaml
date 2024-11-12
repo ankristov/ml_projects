@@ -1,0 +1,7 @@
+artifact_location: file:///Users/andreikristov/Documents/repos/ml_projects/Effect
+  of the Bank Marketing Campaign (sklearn, NN, mlflow)/mlruns/605962284040628661
+creation_time: 1731424970130
+experiment_id: '605962284040628661'
+last_update_time: 1731424970130
+lifecycle_stage: active
+name: exp__GradientBoosting_basic

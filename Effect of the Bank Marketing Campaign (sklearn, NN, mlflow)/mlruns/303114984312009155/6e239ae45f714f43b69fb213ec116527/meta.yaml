@@ -1,0 +1,16 @@
+artifact_uri: file:///Users/andreikristov/Documents/repos/ml_projects/Effect of the
+  Bank Marketing Campaign (sklearn, NN, mlflow)/mlruns/303114984312009155/6e239ae45f714f43b69fb213ec116527/artifacts
+end_time: 1731423998746
+entry_point_name: ''
+experiment_id: '303114984312009155'
+lifecycle_stage: active
+run_id: 6e239ae45f714f43b69fb213ec116527
+run_name: run_03__x_oversampled__thr_05
+run_uuid: 6e239ae45f714f43b69fb213ec116527
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1731423997253
+status: 3
+tags: []
+user_id: andreikristov

@@ -1,0 +1,7 @@
+artifact_location: file:///Users/andreikristov/Documents/repos/ml_projects/Effect
+  of the Bank Marketing Campaign (sklearn, NN, mlflow)/mlruns/166186501569073686
+creation_time: 1731423937083
+experiment_id: '166186501569073686'
+last_update_time: 1731423937083
+lifecycle_stage: active
+name: exp__LogisticRegression_tuned

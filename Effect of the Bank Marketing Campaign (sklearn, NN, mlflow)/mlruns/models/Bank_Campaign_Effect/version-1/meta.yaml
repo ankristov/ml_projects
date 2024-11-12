@@ -1,0 +1,16 @@
+aliases: []
+creation_timestamp: 1731426397421
+current_stage: None
+description: null
+last_updated_timestamp: 1731426397421
+name: Bank_Campaign_Effect
+run_id: a6b5fb0fea974961a3cbb0c719ee6617
+run_link: null
+source: file:///Users/andreikristov/Documents/repos/ml_projects/Effect of the Bank
+  Marketing Campaign (sklearn, NN, mlflow)/mlruns/303114984312009155/a6b5fb0fea974961a3cbb0c719ee6617/artifacts/model
+status: READY
+status_message: null
+storage_location: file:///Users/andreikristov/Documents/repos/ml_projects/Effect of
+  the Bank Marketing Campaign (sklearn, NN, mlflow)/mlruns/303114984312009155/a6b5fb0fea974961a3cbb0c719ee6617/artifacts/model
+user_id: null
+version: 1

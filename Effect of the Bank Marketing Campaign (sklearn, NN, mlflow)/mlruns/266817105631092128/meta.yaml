@@ -1,0 +1,7 @@
+artifact_location: file:///Users/andreikristov/Documents/repos/ml_projects/Effect
+  of the Bank Marketing Campaign (sklearn, NN, mlflow)/mlruns/266817105631092128
+creation_time: 1731423880850
+experiment_id: '266817105631092128'
+last_update_time: 1731423880850
+lifecycle_stage: active
+name: exp__NaiveBayes_basic

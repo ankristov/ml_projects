@@ -120,7 +120,7 @@ def build_model_basic(input_shape, output_shape):
     """
 
     input_avg_embeddings = Input(shape=input_shape, dtype='float32')
-    X = Dense(units=output_shape, activation='softmax', kernel_regularizer=regularizers.l2(0.01))(input_avg_embeddings)
+    X = Dense(units=output_shape, activation='softmax', kernel_regularizer = regularizers.l2(0.01))(input_avg_embeddings)
 
     model = Model(inputs=input_avg_embeddings, outputs=X)
 

@@ -1,6 +1,0 @@
-artifact_location: mlflow-artifacts:/648123028761442298
-creation_time: 1731088223055
-experiment_id: '648123028761442298'
-last_update_time: 1731088223055
-lifecycle_stage: active
-name: exp__SVM_tuned

@@ -1,6 +1,0 @@
-artifact_location: mlflow-artifacts:/459060352158224760
-creation_time: 1731087768396
-experiment_id: '459060352158224760'
-last_update_time: 1731087768396
-lifecycle_stage: active
-name: exp__LogisticRegression_tuned

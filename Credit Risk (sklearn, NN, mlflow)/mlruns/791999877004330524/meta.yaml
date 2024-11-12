@@ -1,6 +1,0 @@
-artifact_location: mlflow-artifacts:/791999877004330524
-creation_time: 1731087702636
-experiment_id: '791999877004330524'
-last_update_time: 1731087702636
-lifecycle_stage: active
-name: exp__NaiveBayes_basic

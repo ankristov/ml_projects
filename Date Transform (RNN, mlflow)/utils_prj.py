@@ -36,9 +36,9 @@ def generate_date():
         _description_
     """
     # Define format of the data we would like to generate
-    FORMATS = ['short', 'medium', 'long'] \
-            + ['full']*10 \
-            + ['d MMM YYY', 'd MMMM YYY', 'dd MMM YYY', 'd MMM, YYY', 'd MMMM, YYY', 'dd, MMM YYY', 'd MM YY', 'd MMMM YYY', 'MMMM d YYY', 'MMMM d, YYY', 'dd.MM.YY']
+    FORMATS = (['short', 'medium', 'long']
+               + ['full']*10
+               + ['d MMM YYY', 'd MMMM YYY', 'dd MMM YYY', 'd MMM, YYY', 'd MMMM, YYY', 'dd, MMM YYY', 'd MM YY', 'd MMMM YYY', 'MMMM d YYY', 'MMMM d, YYY', 'dd.MM.YY'])
 
     faker = Faker()
     dt = faker.date_object()
@@ -371,6 +371,101 @@ def clean_history(model_history):
     return history_df
 
 
+def get_metrics_from_history(history_df):
+    """
+    Keep the result of last epoch.
+
+    Parameters
+    ----------
+    history_df : _type_
+        _description_
+
+    Returns
+    -------
+    _type_
+        _description_
+    """
+    metrics = {col:np.round(history_df[col].values[-1],4)  for col in history_df.columns}
+
+    return metrics
+
+
+def get_metrics(y_true, y_pred, y_pred_proba=None, verbose=True):
+    """
+    _summary_
+
+    Parameters
+    ----------
+    y_true : _type_
+        _description_
+    y_pred : _type_
+        _description_
+    y_pred_proba : _type_, optional
+        _description_, by default None
+    verbose : bool, optional
+        _description_, by default True
+
+    Returns
+    -------
+    _type_
+        _description_
+    """
+
+    from sklearn.metrics import (  # roc_auc_score,
+        accuracy_score,
+        cohen_kappa_score,
+        confusion_matrix,
+        f1_score,
+        matthews_corrcoef,
+        precision_score,
+        recall_score,
+    )
+
+    acc = accuracy_score(y_true, y_pred)
+    prec = precision_score(y_true, y_pred)
+    recall = recall_score(y_true, y_pred)
+    f1 = f1_score(y_true, y_pred)
+    mcc = matthews_corrcoef(y_true, y_pred)
+    kappa = cohen_kappa_score(y_true, y_pred)
+
+    metrics = {
+        'accuracy': round(acc, 2), 
+        'precision': round(prec, 2), 
+        'recall': round(recall, 2),
+        'f1_score': round(f1, 2),
+        'matthews_corrcoef': round(mcc, 2),
+        'kappa': round(kappa, 2)
+        }
+    
+    # metrics from confusion matrix
+    tn, fp, fn, tp = confusion_matrix(y_true, y_pred).ravel()
+    metrics['tn'] = tn
+    metrics['fp'] = fp
+    metrics['fn'] = fn
+    metrics['tp'] = tp
+    # accuracy per class
+    # metrics['accuracy_p'] = np.divide(tp, (tp + fn), where=(tp + fn) != 0, out=np.nan)
+    # metrics['accuracy_n'] = np.divide(tn, (tn + fp), where=(tn + fp) != 0, out=np.nan)
+    metrics['accuracy_p'] = np.nan if (tp + fn) == 0 else tp / (tp + fn)
+    metrics['accuracy_n'] = np.nan if (tn + fp) == 0 else tn / (tn + fp)
+    
+    # Calculate AUC only if probabilities are provided
+    # if y_pred_proba is not None:
+    #     auc = roc_auc_score(y_true, y_pred_proba)
+    #     metrics['auc'] = round(auc, 2)
+    #     # manual (for comparison)
+    #     tpr, fpr, thr = prep_roc_auc(y_true, y_pred_proba, verbose=verbose)
+    #     roc_auc_manual = calculate_auc(fpr, tpr)
+    #     metrics['auc_manual'] = round(roc_auc_manual, 2)
+    
+    if verbose:
+        print('*** get_metrics ***')
+        for k, v in metrics.items():
+            print(f"{k}: {v}")
+
+    return metrics
+
+
 def plot_metrics_vs_epoch(history_df, file_name, verbose):
     """
     Plot model fit metrics vs epoch.
@@ -447,47 +542,6 @@ def plot_model_history(history_df):
     # Show the plot
     plt.tight_layout()
     plt.show()
-
-
-def get_metrics_from_history(history_df):
-    
-    metrics = {col:np.round(history_df[col].values[-1],4)  for col in history_df.columns}
-
-    return metrics
-
-
-def get_metrics_from_model(y_true, y_pred, verbose=False):
-    """
-    _summary_
-
-    Parameters
-    ----------
-    y_true : _type_
-        _description_
-    y_pred : _type_
-        _description_
-    y_pred_prob : _type_
-        _description_
-    verbose : bool, optional
-        _description_, by default False
-
-    Returns
-    -------
-    _type_
-        _description_
-    """
-    print('*** get_metrics ***')
-
-    acc = (y_true == y_pred).mean()
-
-    metrics = {
-        'test_accuracy': round(acc, 2), 
-        }
-
-    if verbose:
-        print('metrics: ', metrics)
-
-    return metrics
 
 
 def log_experiment(experiment_name, run_name, model, input_example, run_metrics, run_params=None, run_tags=None, run_artifacts_png=None, verbose=False):

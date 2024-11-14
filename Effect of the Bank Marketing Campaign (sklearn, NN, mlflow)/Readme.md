@@ -60,5 +60,26 @@ Follow these steps to set up the environment. Ensure that **Conda** is installed
     jupyter notebook
     ```
 
+### Initial Setups (mlflow)
+
+1. **Before logging experiments**
+    ```bash
+    mlflow server --backend-store-uri /path/to/the/project/folder/mlruns  --default-artifact-root /path/to/the/project/folder/mlruns --port 5000
+    ```
+2. **To clean processes running on the port**
+    ```bash
+    lsof -i :5000
+    kill -9 <PID1> <PID2> <PID3> ...
+    ```
+
+3. **This can be helpful if something is not running**
+    ```python
+    import os
+    os.environ['MLFLOW_ARTIFACT_URI'] = './mlruns'
+    #del os.environ['MLFLOW_ARTIFACT_URI']
+    mlflow.set_tracking_uri("http://127.0.0.1:5000")
+    mlflow.set_tracking_uri("file:///path/to/the/project/folder/mlruns/mlruns")
+    ```
+
 
 

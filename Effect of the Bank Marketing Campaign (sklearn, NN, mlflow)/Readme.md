@@ -11,23 +11,27 @@ Follow these steps to set up the environment. Ensure that **Conda** is installed
 1. **Create the Conda environment**  
    Run the command below in the terminal to create a Conda environment and install Python 3.9 and `ipykernel` inside it:
    ```bash
-   conda create --prefix /Users/andreikristov/Documents/python/conda_envs/git_mlflow_demo python=3.9 ipykernel
+   conda create --prefix path/to/the/folder/env_ml/ python=3.9 ipykernel
+   ```
+   or (in default folder)
+   ```bash
+   conda create -n env_ml
    ```
 2. **Create a symbolic link for the environment**
-    This step allows using a short environment name by linking it to the default Conda environment directory:
+    This step allows using a short environment name by linking it to the default Conda environment directory (in case if custom path was used):
 
     ```bash
-    ln -s /Users/andreikristov/Documents/python/conda_envs/git_mlflow_demo /opt/anaconda3/envs/git_mlflow_demo
+    ln -s /path/to/the/folder/with/conda/env_ml/ /opt/anaconda3/envs/env_ml/
     ```
 3. **Activate the environment**
     To activate the environment, use one of these commands:
     
     ```bash
-    conda activate "/Users/andreikristov/Documents/python/conda_envs/git_mlflow_demo"
+    conda activate "path/to/the/folder/env_ml/"
     ```
     Or, if it's located in the default envs_dir, use:
     ```bash
-    conda activate git_mlflow_demo
+    conda activate env_ml
     ```
 4. **Install packages**
     Run the following command to install the necessary packages:
@@ -42,13 +46,13 @@ Follow these steps to set up the environment. Ensure that **Conda** is installed
     ```
     If this command doesn’t work, you may need to specify the absolute path to the pip executable from this environment:
     ```bash
-    "/Users/andreikristov/Documents/python/conda_envs/git_mlflow_demo/bin/pip" install imblearn
+    "path/to/the/folder/env_ml/bin/pip" install imblearn
     ```
 
 6. **Add the environment to Jupyter Notebook**
     Register the new environment as a kernel in Jupyter Notebook:
     ```bash
-    python -m ipykernel install --user --name=git_mlflow_demo
+    python -m ipykernel install --user --name=env_ml
     ```
 7. **Launch Jupyter Notebook**
     Run the command below to open Jupyter Notebook (inside the activated Conda environment):

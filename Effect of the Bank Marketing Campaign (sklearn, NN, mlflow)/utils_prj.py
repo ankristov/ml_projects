@@ -93,34 +93,6 @@ def preprocess_dataset(df, verbose=False):
     return df_preprocessed
 
 
-def train_test_split(df, verbose=False):
-    """
-    _summary_
-
-    Parameters
-    ----------
-    df : _type_
-        _description_
-
-    Returns
-    -------
-    _type_
-        _description_
-    """
-
-    from sklearn.model_selection import train_test_split
-    
-    X = df.drop(columns='y')
-    y = df[['y']]
-    
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3,stratify = y, random_state=47)
-    
-    if verbose:
-        print('*** train_test_split ***')
-
-    return X_train, X_test, y_train, y_test
-
-
 def oversample_dataset(X, y, how='SMOT', verbose=False):
     """
     _summary_

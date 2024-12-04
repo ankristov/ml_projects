@@ -1,6 +1,26 @@
-# Model Comparison and Deployment Framework
+# Project Objective
 
-This project is part of an experiment to compare models for binary classification tasks. The goal is to develop a framework for testing multiple models, logging results, and deploying them. Models considered include Naive Bayes, Logistic Regression, XGBoost, SVM, and a simple neural network.
+**The goal**: To develop a framework for testing multiple models on the task of binary classification, including preparation steps for deploying the best-performing model.
+
+The following models were included: Naive Bayes, Logistic Regression, XGBoost, SVM, and a simple neural network.
+
+For each model, the following versions were evaluated:
+
+- A basic model (without tuning) on the original dataset
+- A basic model (without tuning) on the oversampled dataset (using SMOTENC)
+- A tuned model (with grid parameter tuning) on the - A tuned model (with grid parameter tuning) on the oversampled dataset (using SMOTENC)
+
+For each version of the model, metrics were calculated for the default threshold (0.5) and the optimal threshold (corresponding to the closest point on the ROC AUC curve to the upper-left corner).
+
+Results and artifacts were logged with MLFlow.
+
+The best-performing model was registered in the model registry and prepared for deployment.
+
+## Results
+
+Here is the summary of all model runs.
+
+![Result of experiments on binary classification task](./mlflow_results_styled.png)
 
 ## Initial Setup
 
